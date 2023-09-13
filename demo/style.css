@@ -1,0 +1,25 @@
+/* Set the size and style of the CodeMirror textareas */
+.container {
+	margin-top: 20px;
+}
+
+.CodeMirror {
+	height: 350px;
+	border: 1px solid #ccc;
+	font-size: 12px;
+	cursor:text;
+}
+
+/* Style the Convert button */
+.convert-button {
+	background-color: #2196F3;
+	color: #fff;
+	padding: 10px 20px;
+	border: none;
+	border-radius: 4px;
+	cursor: pointer;
+}
+
+.convert-button:hover {
+	background-color: #0b7dda;
+}

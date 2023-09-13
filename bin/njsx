@@ -1,0 +1,62 @@
+#!/usr/bin/env node
+"use strict"
+
+const fs = require("fs")
+const path = require("path")
+const njsx = require("../src/njsx.js")
+
+const argv = process.argv.slice(2)
+
+let arg_0 = argv[0] || ''
+let arg_1 = argv[1] || ''
+
+if(arg_0 == 'compile') {
+	try {
+		transpileFile(argv[1], argv[2])
+	}
+	catch (err) {
+		console.log(err.toString())
+	}
+}
+else if(arg_0 == 'watch') {
+	console.log('Watching...', argv[1])
+	transpileFile(argv[1], argv[2])
+	fs.watch(argv[1], (e) => {
+		try {
+			transpileFile(argv[1], argv[2])
+		}
+		catch (err) {
+			console.log(argv[1], err.toString())
+		}
+	})
+}
+else if(arg_0 == 'watch-more') {
+	console.log('Watching...', ...(argv.slice(1)))
+	for (let i = 1; i < argv.length; i++) {
+		let filesrc = argv[i]
+		transpileFile(filesrc)
+		fs.watch(filesrc, (e) => {
+			try {
+				transpileFile(filesrc)
+			}
+			catch (err) {
+				console.log(filesrc, err.toString())
+			}
+		});
+	}
+}
+else {
+	console.log('availabe command list : ')
+	console.log('njsx compile <filename> <output>')
+	console.log('njsx watch <filename> <output>')
+	console.log('njsx watch-more <file 0> <file 1>...<file n>')
+}
+
+
+function transpileFile(src, out=null) {
+	let jsx = fs.readFileSync(src, 'utf-8')
+	if(out == null) out = path.parse(src).name + '.js'
+	let js = njsx.toJS(jsx)
+	fs.writeFileSync(out, js)
+	console.log(`Transpiled! : "${src}" > "${out}"`)
+}				

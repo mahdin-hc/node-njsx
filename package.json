@@ -1,0 +1,20 @@
+{
+	"name": "njsx",
+	"version": "1.0.0",
+	"description": "Write HTML template with dynamic Javascript!",
+	"main": "src/njsx.js",
+	"scripts": {
+		"test": "echo \"Error: no test specified\" && exit 1",
+		"bundle" : "src/standalone.js > njsx.bundle.js"
+	},
+	"author": "2DPrototype",
+	"license": "ISC",
+	"dependencies": {
+		"acorn": "^8.10.0",
+		"acorn-jsx": "^5.3.2",
+		"astring": "^1.8.6"
+	},
+	"bin": {
+		"njsx": "./bin/njsx"
+	}
+}
