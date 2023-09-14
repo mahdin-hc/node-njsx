@@ -16,5 +16,14 @@
 	},
 	"bin": {
 		"njsx": "./bin/njsx"
-	}
+	},
+	"keywords": [
+		"dom",
+		"njsx",
+		"jsx",
+		"node",
+		"javascript",
+		"no-react",
+		"jsx-no-react"
+	]
 }
