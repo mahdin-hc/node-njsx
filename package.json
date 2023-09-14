@@ -1,6 +1,6 @@
 {
 	"name": "node-njsx",
-	"version": "1.0.0",
+	"version": "1.0.1",
 	"description": "Write HTML template with dynamic Javascript!",
 	"main": "src/njsx.js",
 	"scripts": {
