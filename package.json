@@ -5,7 +5,7 @@
 	"main": "src/njsx.js",
 	"scripts": {
 		"test": "echo \"Error: no test specified\" && exit 1",
-		"bundle" : "src/standalone.js > njsx.bundle.js"
+		"bundle": "src/standalone.js > njsx.bundle.js"
 	},
 	"author": "2DPrototype",
 	"license": "ISC",
