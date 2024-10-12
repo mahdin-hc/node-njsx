@@ -1,7 +1,12 @@
 var njsx = require('../src/njsx.js');
 
 let jsx_code = `
-	let my_elm = <div id="my_elm"></div>
+	let d = <span>hello</span>
+	let my_elm = <div id="my_elm">
+		hello
+		{d}
+		world
+	</div>
 	document.body.append(my_elm)
 `
 

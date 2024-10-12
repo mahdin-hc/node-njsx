@@ -18,7 +18,7 @@ JSX Syntax is really useful and handy when you are making template element in yo
 
 **Here is some example of N-JSX.**
 
-*Using in avascript DOM (Hard to read when component is big)*
+*Using in Javascript DOM (Hard to read when component is big)*
 ```javascript
 function userProfile(name, img_url) {
 	//root container

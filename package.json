@@ -1,10 +1,10 @@
 {
 	"name": "node-njsx",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "Write HTML template with dynamic Javascript!",
 	"main": "src/njsx.js",
 	"scripts": {
-		"test": "echo \"Error: no test specified\" && exit 1",
+		"test": "node ./test/test_0.js",
 		"bundle": "src/standalone.js > njsx.bundle.js"
 	},
 	"author": "2DPrototype",

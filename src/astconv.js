@@ -106,8 +106,10 @@ function Loop(node) {
 	}
 	else if (node.type === "JSXText") {
 		let l = tempAST.Literal()
-		l.value = node.value
-		l.raw = toStr(node.raw)
+		let value = node.value.trim()
+		if (value == "") return null
+		l.value = value
+		l.raw = toStr(value)
 		return l
 	}
 	else if (node.type === "JSXIdentifier") {
